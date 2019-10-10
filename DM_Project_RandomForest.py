@@ -1,6 +1,7 @@
 
 import numpy as np
 import pandas as pd
+import nltk
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from sklearn.cross_validation import cross_val_score

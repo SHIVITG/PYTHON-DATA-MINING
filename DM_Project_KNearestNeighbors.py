@@ -16,7 +16,7 @@ target_label_wrist = dominant_wrist_file[['Activity']].values.ravel()
 print "Training data dimensions for sensor at dominant_wrist position"
 print train_data_wrist.shape
 print target_label_wrist.shape
-print "----------------------------------------------------------------------------"
+print "---Next----"
 print "\n"
 
 
@@ -28,7 +28,7 @@ target_label_wrist_test = dominant_wrist_file_test[['Activity']].values.ravel()
 print "Testing data dimensions for sensor at dominant_wrist position"
 print test_data_wrist.shape
 print target_label_wrist_test.shape
-print "----------------------------------------------------------------------------"
+print "---Next----"
 print "\n"
 
 knn_wrist = KNeighborsClassifier(n_neighbors=3, algorithm='auto', weights='uniform')
@@ -41,7 +41,7 @@ knn_wrist_gs = GridSearchCV(knn_wrist, param_grid=param_grid)
 knn_wrist_gs.fit(train_data_wrist, target_label_wrist)
 predicted = knn_wrist_gs.predict(test_data_wrist)
 print "Best parameters to be used for training the model",knn_wrist_gs.best_params_
-print "\n"
+#print "\n"
 print "Classification report for sensor at Ankle position"
 # Evaluation
 print metrics.classification_report(target_label_wrist_test, predicted)
@@ -342,7 +342,7 @@ plt.figure(figsize=(10,10))
 plot_confusion_matrix(cm_normalized, title='Normalized confusion matrix for Sensor at Ankle position')
 plt.savefig('confusion_matrix.png')
 plt.show()
-print "--------------------------------------------------------------------------------------"
+print "---Next----"
 print "\n"
 dominant_ankle_file = pd.read_csv('C:\\Users\\17303011\\Documents\\DATA\\sensor_based_files_33\\dominant_Ankle_train.csv')
 train_data_ankle = dominant_ankle_file[['MeanSM','StDevSM','MdnSM','belowPer25SM','belowPer75SM','TotPower_0.3_15','FirsDomFre_0.3_15','PowFirsDomFre_0.3_15','SecDomFre_0.3_15','PowSecDomFre_0.3_15','FirsDomFre_0.6_2.5','PowFirsDomFre_0.6_2.5','FirsDomFre_per_TotPower_0.3_15']].values
@@ -352,6 +352,6 @@ clf_cross_val = KNeighborsClassifier(n_neighbors=9, algorithm='auto', weights='u
 scores = cross_val_score(clf_cross_val, train_data_ankle,target_label_ankle,cv=10)
 print "Scores for each fold:"
 print scores
-print "---------------------------------------------------------------------------------"
+print "---Next----"
 print ("Accuracy for 10Fold cross validation using KNN: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
 

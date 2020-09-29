@@ -1,4 +1,4 @@
-
+# Load required libraries 
 import numpy as np
 import pandas as pd
 from sklearn import metrics
@@ -8,6 +8,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.grid_search import GridSearchCV
 from sklearn.neighbors import KNeighborsClassifier
 
+# Reading data
 dominant_wrist_file = pd.read_csv('C:\\Users\\shiva\\Desktop\\MLDM PROJECT\\DATA\\sensor_based_files_train\\dominant_wrist_train.csv')
 train_data_wrist = dominant_wrist_file[['MeanSM','StDevSM','MdnSM','belowPer25SM','belowPer75SM','TotPower_0.3_15','FirsDomFre_0.3_15','PowFirsDomFre_0.3_15','SecDomFre_0.3_15','PowSecDomFre_0.3_15','FirsDomFre_0.6_2.5','PowFirsDomFre_0.6_2.5','FirsDomFre_per_TotPower_0.3_15']].values
 target_label_wrist = dominant_wrist_file[['Activity']].values.ravel()

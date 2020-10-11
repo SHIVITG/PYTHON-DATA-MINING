@@ -6,6 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from sklearn.cross_validation import cross_val_score
 import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score, f1_score
 from sklearn.metrics import confusion_matrix
 from sklearn.grid_search import GridSearchCV
 dominant_wrist_file = pd.read_csv('C:\\Users\\shiva\\Desktop\\MLDM PROJECT\\DATA\\sensor_based_files_train\\dominant_wrist_train.csv')
